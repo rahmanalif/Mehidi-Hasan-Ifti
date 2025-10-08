@@ -1,4 +1,4 @@
-import Navigation from '@/components/Ui/Navigation';
+import Navigation from '@/components/ui/Navigation';
 import HeroNew from '@/components/sections/HeroNew';
 import HowICanHelp from '@/components/sections/HowICanHelp';
 import Footer from '@/components/sections/Footer';
