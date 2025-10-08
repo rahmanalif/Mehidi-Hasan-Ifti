@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -24,20 +24,22 @@ export default function Navigation() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-3xl"
-      >
-        <div
-          className="bg-white/10 backdrop-blur-2xl shadow-xl shadow-black/10 border border-white/20 rounded-full px-6 py-3 transition-all duration-500"
-          style={{
-            backdropFilter: 'blur(20px) saturate(180%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-          }}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-4">
+        {/* Navigation Bar */}
+        <motion.nav
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="w-[40vw]"
         >
-          <div className="flex items-center justify-between">
+          <div
+            className="bg-white/10 backdrop-blur-2xl shadow-xl shadow-black/10 border border-white/20 rounded-full px-6 py-3 transition-all duration-500"
+            style={{
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            }}
+          >
+            <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
               href="#"
@@ -90,12 +92,32 @@ export default function Navigation() {
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
-
-            {/* Spacer for mobile (keeps logo centered when menu button is visible) */}
-            <div className="md:hidden w-10" />
+            </div>
           </div>
-        </div>
-      </motion.nav>
+        </motion.nav>
+
+        {/* Circular Action Button - Separate from Nav */}
+        <motion.a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('#contact');
+          }}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          className="hidden md:flex items-center justify-center w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-2xl rounded-full text-slate-800 hover:text-slate-900 transition-all cursor-pointer shadow-xl shadow-black/10 border border-white/20"
+          style={{
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Get in touch"
+        >
+          <Mail className="w-6 h-6" />
+        </motion.a>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
