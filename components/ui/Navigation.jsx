@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import GlassSurface from './GlassSurface';
+import { Button } from '@/components/ui/button';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -28,22 +28,16 @@ export default function Navigation() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[62%] max-w-3xl"
+        className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-3xl"
       >
-        <GlassSurface
-          width="100%"
-          height="auto"
-          borderRadius={9999}
-          displace={8}
-          distortionScale={-150}
-          redOffset={5}
-          greenOffset={10}
-          blueOffset={15}
-          brightness={60}
-          opacity={0.85}
-          className="px-4 py-2"
+        <div
+          className="bg-white/10 backdrop-blur-2xl shadow-xl shadow-black/10 border border-white/20 rounded-full px-6 py-3 transition-all duration-500"
+          style={{
+            backdropFilter: 'blur(20px) saturate(180%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          }}
         >
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
               href="#"
@@ -51,7 +45,7 @@ export default function Navigation() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="text-base md:text-lg font-bold font-mono cursor-pointer text-slate-800 transition-colors flex-shrink-0"
+              className="text-lg md:text-xl font-bold font-mono cursor-pointer text-slate-800 transition-colors flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -71,7 +65,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="relative text-slate-700 hover:text-slate-900 transition-all cursor-pointer px-3 py-1.5 rounded-full font-medium text-sm group"
+                  className="relative text-slate-700 hover:text-slate-900 transition-all cursor-pointer px-4 py-2 rounded-full font-medium text-sm group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -87,32 +81,20 @@ export default function Navigation() {
             </div>
 
             {/* Mobile Menu Button */}
-            <GlassSurface
-              width={40}
-              height={40}
-              borderRadius={9999}
-              displace={5}
-              distortionScale={-120}
-              redOffset={3}
-              greenOffset={8}
-              blueOffset={12}
-              brightness={65}
-              opacity={0.8}
-              className="md:hidden cursor-pointer"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden hover:bg-white/20 rounded-full text-slate-800"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle menu"
-                className="w-full h-full flex items-center justify-center text-slate-800"
-              >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </GlassSurface>
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
 
             {/* Spacer for mobile (keeps logo centered when menu button is visible) */}
             <div className="md:hidden w-10" />
           </div>
-        </GlassSurface>
+        </div>
       </motion.nav>
 
       {/* Mobile Menu */}
