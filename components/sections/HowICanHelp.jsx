@@ -59,7 +59,7 @@ export default function HowICanHelp() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:pr-12"
+              className="lg:pr-12 lg:pl-20 lg:pt-20"
             >
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900">
                 How Can
@@ -121,7 +121,7 @@ export default function HowICanHelp() {
           </div>
 
           {/* Card 2 - LEFT (starts from middle of Card 1) */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[150px] mt-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[100px] mt-8">
             <motion.a
               href={helpItems[1].link}
               initial={{ opacity: 0, y: 30 }}
@@ -153,7 +153,7 @@ export default function HowICanHelp() {
           </div>
 
           {/* Card 3 - RIGHT (starts from middle of Card 2) */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[150px] mt-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[300px] mt-8">
             <div></div>
             <motion.a
               href={helpItems[2].link}
@@ -185,7 +185,7 @@ export default function HowICanHelp() {
           </div>
 
           {/* Card 4 - LEFT (starts from middle of Card 3) */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[150px] mt-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[100px] mt-8">
             <motion.a
               href={helpItems[3].link}
               initial={{ opacity: 0, y: 30 }}
@@ -217,7 +217,7 @@ export default function HowICanHelp() {
           </div>
 
           {/* Card 5 - RIGHT (starts from middle of Card 4, smaller height) */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[150px] mt-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:-mt-[300px] mt-8">
             <div></div>
             <motion.a
               href={helpItems[4].link}
