@@ -164,7 +164,7 @@ export default function AboutMe() {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
           {/* Second Window - Story Continuation */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -173,7 +173,7 @@ export default function AboutMe() {
           >
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -230,10 +230,10 @@ export default function AboutMe() {
                 </Button>
               </motion.div>
 
-            </div>
+            </div> */}
 
             {/* Right Single Image */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -246,10 +246,10 @@ export default function AboutMe() {
                   alt="Ali Abdaal with book"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </div> */}
 
               {/* Decorative SVG Elements */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+              {/* <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M 100,150 Q 200,100 300,150"
                   stroke="#FF9A62"
@@ -262,7 +262,7 @@ export default function AboutMe() {
               </svg>
             </motion.div>
           </div>
-          </motion.div>
+          </motion.div> */} 
         </div>
       </div>
     </section>

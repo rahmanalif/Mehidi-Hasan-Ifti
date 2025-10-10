@@ -49,9 +49,9 @@ export default function Footer() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Brand Column */}
-            <div>
+            <div className="lg:col-span-1">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -95,71 +95,74 @@ export default function Footer() {
               </motion.div>
             </div>
 
-            {/* More */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h4 className="text-lg font-semibold mb-6 text-gray-900">More</h4>
-              <ul className="space-y-3">
-                {navigation.more.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            {/* Link Sections */}
+            <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+              {/* More */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <h4 className="text-lg font-semibold mb-6 text-gray-900">More</h4>
+                <ul className="space-y-3">
+                  {navigation.more.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
 
-            {/* Free Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h4 className="text-lg font-semibold mb-6 text-gray-900">Free Content</h4>
-              <ul className="space-y-3">
-                {navigation.freeContent.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              {/* Free Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h4 className="text-lg font-semibold mb-6 text-gray-900">Free Content</h4>
+                <ul className="space-y-3">
+                  {navigation.freeContent.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
 
-            {/* Products */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h4 className="text-lg font-semibold mb-6 text-gray-900">Products</h4>
-              <ul className="space-y-3">
-                {navigation.products.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.href}
-                      className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              {/* Products */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <h4 className="text-lg font-semibold mb-6 text-gray-900">Products</h4>
+                <ul className="space-y-3">
+                  {navigation.products.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-gray-600 hover:text-gray-900 transition-colors inline-block text-base underline"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
           </div>
         </div>
 
