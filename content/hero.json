@@ -1,0 +1,24 @@
+{
+  "profileImage": "/ifti.jpg",
+  "name": "Mehidi Hasan Ifti",
+  "greeting": "Hey Friends",
+  "description": "I'm Ali. I'm a Doctor turned Entrepreneur, YouTuber, and the author of the New York Times bestseller, Feel-Good Productivity.",
+  "bookTitle": "Feel-Good Productivity",
+  "bookUrl": "#",
+  "newsletter": {
+    "title": "LifeNotes",
+    "subscriberCount": "330,000",
+    "reviewCount": "200+",
+    "description": "Each week, I share actionable productivity tips, practical life advice, and highlights from my favourite books, directly to your inbox. It's free to join, and always will be.",
+    "privacyNote": "By submitting this form, you'll be signed up to my free newsletter, which sometimes includes mentions of my books, apps and courses. You can opt-out at any time with no hard feelings 🙂 Here's our privacy policy if you like reading.",
+    "privacyPolicyUrl": "#"
+  },
+  "featuredIn": [
+    "BUSINESS INSIDER",
+    "The New York Times",
+    "GOOD MORNING AMERICA",
+    "FINANCIAL TIMES",
+    "BBC RADIO 4",
+    "Men's Health"
+  ]
+}

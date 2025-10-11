@@ -1,0 +1,29 @@
+{
+  "name": "Mehidi Hasan",
+  "introText": [
+    "Since 2017, I've been documenting my personal, professional and entrepreneurial journey on YouTube, sharing the books, strategies, ideas and tools that I've found most helpful over the years to help us be more productive, live more intentionally and build a life we love.",
+    "This seems to have resonated with people, to the point that our online community has grown to 8 million followers across YouTube and Instagram, although we're also growing on X/Twitter, LinkedIn and TikTok too)."
+  ],
+  "buttonText": "Read My Full Story",
+  "buttonUrl": "#",
+  "images": [
+    {
+      "url": "/ifti1.jpg",
+      "alt": "Ali Abdaal presenting",
+      "position": "top-right",
+      "rotation": "rotate-3"
+    },
+    {
+      "url": "/ifti2.jpg",
+      "alt": "Ali Abdaal working",
+      "position": "center-left",
+      "rotation": "-rotate-6"
+    },
+    {
+      "url": "/ifti3.jpg",
+      "alt": "Ali Abdaal headshot",
+      "position": "bottom-right",
+      "rotation": "rotate-2"
+    }
+  ]
+}

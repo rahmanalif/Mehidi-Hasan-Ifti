@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import aboutData from '@/content/about.json';
 
 export default function AboutMe() {
   return (
@@ -42,7 +43,7 @@ export default function AboutMe() {
                   Hey, I'm
                   <br />
                   <span className="relative inline-block">
-                    Mehidi Hasan
+                    {aboutData.name}
                     <svg
                       className="absolute -bottom-2 left-0 w-full"
                       height="8"
@@ -61,25 +62,18 @@ export default function AboutMe() {
                 </h2>
               </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-lg md:text-xl text-slate-700 leading-relaxed"
-              >
-                Since 2017, I've been documenting my personal, professional and entrepreneurial journey on YouTube, sharing the books, strategies, ideas and tools that I've found most helpful over the years to help us be more productive, live more intentionally and build a life we love.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="text-lg md:text-xl text-slate-700 leading-relaxed"
-              >
-                This seems to have resonated with people, to the point that our online community has grown to 8 million followers across YouTube and Instagram, although we're also growing on X/Twitter, LinkedIn and TikTok too).
-              </motion.p>
+              {aboutData.introText.map((text, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + (index * 0.1) }}
+                  viewport={{ once: true }}
+                  className="text-lg md:text-xl text-slate-700 leading-relaxed"
+                >
+                  {text}
+                </motion.p>
+              ))}
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -89,8 +83,9 @@ export default function AboutMe() {
               >
                 <Button
                   className="group bg-gradient-to-r from-blue-400 to-cyan-400 hover:from-blue-500 hover:to-cyan-500 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={() => window.location.href = aboutData.buttonUrl}
                 >
-                  Bhaiya lets Connect
+                  {aboutData.buttonText}
                 </Button>
               </motion.div>
             </div>
@@ -131,28 +126,28 @@ export default function AboutMe() {
               </svg>
 
               {/* Image 1 - Top Right */}
-              <div className="absolute top-0 right-12 w-64 h-94 rounded-3xl overflow-hidden shadow-2xl transform rotate-3">
+              <div className={`absolute top-0 right-12 w-64 h-94 rounded-3xl overflow-hidden shadow-2xl transform ${aboutData.images[0].rotation}`}>
                 <img
-                  src="/ifti1.jpg"
-                  alt="Ali Abdaal presenting"
+                  src={aboutData.images[0].url}
+                  alt={aboutData.images[0].alt}
                   className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Image 2 - Center Left */}
-              <div className="absolute top-32 left-0 w-58 h-74 rounded-3xl overflow-hidden shadow-2xl transform -rotate-6">
+              <div className={`absolute top-32 left-0 w-58 h-74 rounded-3xl overflow-hidden shadow-2xl transform ${aboutData.images[1].rotation}`}>
                 <img
-                  src="/ifti2.jpg"
-                  alt="Ali Abdaal working"
+                  src={aboutData.images[1].url}
+                  alt={aboutData.images[1].alt}
                   className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Image 3 - Bottom Right */}
-              <div className="absolute bottom-0 right-0 w-72 h-72 rounded-3xl overflow-hidden shadow-2xl transform rotate-2">
+              <div className={`absolute bottom-0 right-0 w-72 h-72 rounded-3xl overflow-hidden shadow-2xl transform ${aboutData.images[2].rotation}`}>
                 <img
-                  src="/ifti3.jpg"
-                  alt="Ali Abdaal headshot"
+                  src={aboutData.images[2].url}
+                  alt={aboutData.images[2].alt}
                   className="w-full h-full object-cover"
                 />
               </div>

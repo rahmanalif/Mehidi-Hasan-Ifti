@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
+import professionalData from '@/content/professional.json';
 
 export default function ProfessionalMe() {
     const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function ProfessionalMe() {
                 <div className="w-full max-w-6xl bg-white/40 backdrop-blur-xl border border-white/30 rounded-[3rem] shadow-2xl overflow-hidden p-6 sm:p-8">
                     
                     {/* Top Section: Image */}
-                    <motion.div 
+                    <motion.div
                         className="relative w-full h-96 mb-8 rounded-3xl overflow-hidden shadow-lg"
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -32,13 +33,13 @@ export default function ProfessionalMe() {
                         viewport={{ once: true }}
                     >
                         <img
-                            src="/ifti.jpg"
-                            alt="Ifti Abdaal"
+                            src={professionalData.mainImage.url}
+                            alt={professionalData.mainImage.alt}
                             className="w-full h-full object-cover"
-                            style={{ objectPosition: '50% 20%' }}
+                            style={{ objectPosition: professionalData.mainImage.objectPosition }}
                         />
                         <motion.a
-                            href="#contact"
+                            href={professionalData.contactButton.url}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -47,7 +48,7 @@ export default function ProfessionalMe() {
                             whileTap={{ scale: 0.95 }}
                             className="absolute bottom-5 left-5 px-6 py-3 bg-gradient-to-r from-orange-400 to-pink-400 hover:from-orange-500 hover:to-pink-500 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-base"
                         >
-                            Contact Me <ArrowRight className="inline-block ml-2" />
+                            {professionalData.contactButton.text} <ArrowRight className="inline-block ml-2" />
                         </motion.a>
                     </motion.div>
 
@@ -55,23 +56,21 @@ export default function ProfessionalMe() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         
                         {/* Bottom Left: Text Card */}
-                        <motion.div 
+                        <motion.div
                             className="flex flex-col justify-center space-y-6"
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.7, delay: 0.5 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Actionable Productivity Tips</h3>
+                            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">{professionalData.leftSection.title}</h3>
                             <p className="text-gray-700 text-lg leading-relaxed">
-                                Each week, I share actionable productivity tips, practical life
-                                advice, and highlights from my favourite books, directly to your
-                                inbox. It's free to join, and always will be.
+                                {professionalData.leftSection.description}
                             </p>
                         </motion.div>
 
                         {/* Bottom Right: Subscribe Card */}
-                        <motion.div 
+                        <motion.div
                             className="bg-white/60 rounded-3xl shadow-xl p-6 border border-gray-200/80"
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -80,17 +79,13 @@ export default function ProfessionalMe() {
                         >
                             <div className="flex items-start gap-3 mb-4">
                                 <h3 className="text-2xl font-bold text-gray-900">
-                                    Subscribe to <span className="italic">LifeNotes</span>
+                                    Subscribe to <span className="italic">{professionalData.newsletter.title}</span>
                                 </h3>
                                 <span className="text-3xl flex-shrink-0">✍️</span>
                             </div>
 
                             <p className="text-gray-600 text-base leading-relaxed mb-4">
-                                Join a growing community of more than{' '}
-                                <span className="font-bold text-gray-800">
-                                    330,000 friendly readers
-                                </span>
-                                .
+                                {professionalData.newsletter.subscriberText}
                             </p>
 
                             <div className="flex items-center gap-2 mb-5">
@@ -102,7 +97,7 @@ export default function ProfessionalMe() {
                                         />
                                     ))}
                                 </div>
-                                <span className="text-sm text-gray-600">200+ reviews</span>
+                                <span className="text-sm text-gray-600">{professionalData.newsletter.reviewCount} reviews</span>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">

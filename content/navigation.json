@@ -1,0 +1,26 @@
+{
+  "logo": "MHI",
+  "links": [
+    {
+      "name": "About",
+      "href": "#about"
+    },
+    {
+      "name": "Services",
+      "href": "#services"
+    },
+    {
+      "name": "Portfolio",
+      "href": "#portfolio"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "ctaButton": {
+    "text": "Get in Touch",
+    "href": "#contact",
+    "icon": "mail"
+  }
+}

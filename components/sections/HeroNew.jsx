@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
+import heroData from '@/content/hero.json';
 
 export default function HeroNew() {
   const [email, setEmail] = useState('');
@@ -57,8 +58,8 @@ export default function HeroNew() {
                   {/* Profile Image */}
                   <div className="relative aspect-square rounded-full overflow-hidden border-8 border-white shadow-2xl bg-gray-100 z-10">
                     <Image
-                      src="/ifti.jpg"
-                      alt="Mehidi Hasan Ifti"
+                      src={heroData.profileImage}
+                      alt={heroData.name}
                       fill
                       className="object-cover"
                       priority
@@ -77,7 +78,7 @@ export default function HeroNew() {
                 {/* Hey Friends with underline and waving hand */}
                 <div className="relative inline-block">
                   <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900">
-                    Hey Friends{' '}
+                    {heroData.greeting}{' '}
                     <span className="relative inline-block">
                       <svg
                         className="absolute bottom-2 left-0 w-full"
@@ -109,20 +110,7 @@ export default function HeroNew() {
 
                 {/* Intro text */}
                 <div className="text-2xl lg:text-3xl text-gray-800 leading-relaxed max-w-2xl">
-                  <p>
-                    I'm Ali. I'm a{' '}
-                    <span className="font-semibold">Doctor</span> turned{' '}
-                    <span className="font-semibold">Entrepreneur</span>,{' '}
-                    <span className="font-semibold">YouTuber</span>, and the
-                    author of the New York Times bestseller,{' '}
-                    <a
-                      href="#"
-                      className="font-bold underline decoration-2 decoration-orange-400 hover:text-orange-600 transition-colors"
-                    >
-                      Feel-Good Productivity
-                    </a>
-                    .
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: heroData.description.replace('Feel-Good Productivity', `<a href="${heroData.bookUrl}" class="font-bold underline decoration-2 decoration-orange-400 hover:text-orange-600 transition-colors">${heroData.bookTitle}</a>`) }} />
                 </div>
               </motion.div>
             </div>
@@ -174,7 +162,7 @@ export default function HeroNew() {
               <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:p-10 border border-gray-200">
                 <div className="flex items-start gap-2 sm:gap-3 mb-6">
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-                    Subscribe to <span className="italic">LifeNotes</span>
+                    Subscribe to <span className="italic">{heroData.newsletter.title}</span>
                   </h3>
                   <span className="text-3xl sm:text-4xl flex-shrink-0">✍️</span>
                 </div>
@@ -182,7 +170,7 @@ export default function HeroNew() {
                 <p className="text-gray-700 text-base leading-relaxed mb-6">
                   Join a growing community of more than{' '}
                   <span className="font-bold text-gray-900">
-                    330,000 friendly readers
+                    {heroData.newsletter.subscriberCount} friendly readers
                   </span>
                   .
                 </p>
@@ -208,16 +196,14 @@ export default function HeroNew() {
                       />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">200+ reviews</span>
+                  <span className="text-sm text-gray-600">{heroData.newsletter.reviewCount} reviews</span>
                 </div>
               </div>
 
               {/* RIGHT SIDE: Description Text */}
               <div className="flex flex-col justify-center space-y-6">
                 <p className="text-gray-700 text-lg lg:text-xl leading-relaxed">
-                  Each week, I share actionable productivity tips, practical life
-                  advice, and highlights from my favourite books, directly to your
-                  inbox. It's free to join, and always will be.
+                  {heroData.newsletter.description}
                 </p>
 
                 {/* Email Form */}
@@ -240,16 +226,7 @@ export default function HeroNew() {
                   </div>
                 </form>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  By submitting this form, you'll be signed up to my free
-                  newsletter, which sometimes includes mentions of my books, apps
-                  and courses. You can opt-out at any time with no hard feelings 🙂
-                  Here's our{' '}
-                  <a href="#" className="underline hover:text-blue-600">
-                    privacy policy
-                  </a>{' '}
-                  if you like reading.
-                </p>
+                <p className="text-sm text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: heroData.newsletter.privacyNote.replace('privacy policy', `<a href="${heroData.newsletter.privacyPolicyUrl}" class="underline hover:text-blue-600">privacy policy</a>`) }} />
               </div>
             </motion.div>
 
@@ -262,14 +239,7 @@ export default function HeroNew() {
             >
               <p className="text-sm text-gray-500 mb-8">As featured in:</p>
               <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-50">
-                {[
-                  'BUSINESS INSIDER',
-                  'The New York Times',
-                  'GOOD MORNING AMERICA',
-                  'FINANCIAL TIMES',
-                  'BBC RADIO 4',
-                  "Men's Health",
-                ].map((brand) => (
+                {heroData.featuredIn.map((brand) => (
                   <div
                     key={brand}
                     className="text-gray-700 font-semibold text-sm tracking-wide"

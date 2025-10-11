@@ -1,0 +1,63 @@
+{
+  "timelineEvents": [
+    {
+      "year": "1994 - 2012",
+      "icon": "📚",
+      "iconBg": "bg-orange-100",
+      "content": [
+        "I was born in Karachi, Pakistan in 1994, I grew up in Lesotho (in Southern Africa), before moving to the UK with my mother, brother and grandmother in 2003.",
+        "At 12, I learned to code and started earning money as a freelance web designer to fund my World of Warcraft addiction - this was my first taste of making money online. From age 13 onwards, I started teaching A Level Maths and Chemistry part-time as a teaching assistant for kids after school."
+      ]
+    },
+    {
+      "year": "2012 - 2018",
+      "icon": "📝",
+      "iconBg": "bg-amber-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "My first vlog in Summer 2017",
+      "content": [
+        "After finishing high school, I joined Emmanuel College at the University of Cambridge to study Medicine. That was where I developed an informal but hopefully reasonably robust and efficient² way of studying for exams.",
+        "Using these study techniques, I was able to free up enough of my time to build a small business on the side that helped students get into medical school. At the time, I was genuinely interested in learning more about how to build and run a business.",
+        "I started my YouTube channel in 2017 initially as a content marketing driver for the business, but realised I quite enjoyed documenting my life. This was during some particularly fun and helpful educational videos. I made 52 videos in 8 months that grew the channel to 1,000 subscribers, while I should've been studying for my finals."
+      ]
+    },
+    {
+      "year": "2018 - 2020",
+      "icon": "▶️",
+      "iconBg": "bg-red-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "A day in my life as on my Psychiatry placement",
+      "content": [
+        "After graduating medical school, I started work as a junior doctor at Addenbrooke's Hospital in Cambridge, doing placements in Cardiology, Geriatric Medicine and General Surgery. I continued making videos on the side, and the channel grew to 100,000 subscribers that year.",
+        "In 2019, I moved to West Suffolk Hospital to work with placements in Psychiatry and Obstetrics & Gynaecology, which coincided with the first few months of the COVID-19 pandemic. This was a very interesting time to be a doctor."
+      ],
+      "extraContent": [
+        "In August 2020, I took a break from Medicine, intending to go to Australia for a year's placement in Emergency Medicine. Unfortunately, the pandemic had closed Australia's borders, and so I accidentally ended up unemployed..."
+      ]
+    },
+    {
+      "year": "2020 - 2023",
+      "icon": "👍",
+      "iconBg": "bg-yellow-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "My 2020 income breakdown from Medicine + YouTube",
+      "content": [
+        "Given my new unemployed status, I decided to go all-in on building my YouTube channel and business. In 2020, we grew to 1 million subscribers (we being the 'Royal We' since it was just me), and so at the age of 26, I guess I officially became a \"millionaire\"."
+      ],
+      "extraContent": [
+        "In 2021, I started writing my first book, Feel-Good Productivity, while continuing to grow the channel and the business. I moved to London, hired my first few team members. This was when I made the decision to officially leave Medicine to be full-time on the creator / entrepreneur / writer lifestyle.",
+        "In 2023, Feel-Good Productivity was published and became an instant New York Times and Sunday Times bestseller. It's now been translated into 35+ languages, it's been featured on various TV and various podcasts, and the book ended up being translated into 35+ languages, which still blows my mind. Beyond my wildest dreams, none of this would've happened 🙏"
+      ]
+    },
+    {
+      "year": "2024 - 2025",
+      "icon": "👶",
+      "iconBg": "bg-yellow-200",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "I Got Married... I moved to Hong Kong",
+      "content": [
+        "In 2024, I spent a few months digital nomading around the world, before getting married and moving to Hong Kong with my wife Izzy."
+      ]
+    }
+  ]
+}

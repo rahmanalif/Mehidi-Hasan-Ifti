@@ -1,18 +1,23 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' },
-];
+import navigationData from '@/content/navigation.json';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // If user scrolls more than 50px, collapse the button
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (href) => {
     setIsMobileMenuOpen(false);
@@ -24,7 +29,7 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center gap-4">
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center">
         {/* Navigation Bar */}
         <motion.nav
           initial={{ y: -100, opacity: 0 }}
@@ -51,12 +56,12 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              MHI<span className="text-indigo-600">.</span>
+              {navigationData.logo}<span className="text-indigo-600">.</span>
             </motion.a>
 
             {/* Desktop Navigation - Centered */}
             <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
-              {navLinks.map((link, index) => (
+              {navigationData.links.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
@@ -96,27 +101,56 @@ export default function Navigation() {
           </div>
         </motion.nav>
 
-        {/* Circular Action Button - Separate from Nav */}
-        <motion.a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('#contact');
+        {/* Get in Touch Button - Fixed Width Container */}
+        <motion.div
+          className="hidden md:block relative"
+          style={{ width: '180px', height: '56px' }}
+          animate={{
+            marginLeft: isScrolled ? '-40px' : '10px',
           }}
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-          className="hidden md:flex items-center justify-center w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-2xl rounded-full text-slate-800 hover:text-slate-900 transition-all cursor-pointer shadow-xl shadow-black/10 border border-white/20"
-          style={{
-            backdropFilter: 'blur(20px) saturate(180%)',
-            WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-          }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Get in touch"
+          transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <Mail className="w-6 h-6" />
-        </motion.a>
+          <motion.a
+            href={navigationData.ctaButton.href}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(navigationData.ctaButton.href);
+            }}
+            initial={{ y: -100, opacity: 0 }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              width: isScrolled ? '56px' : '180px',
+              left: isScrolled ? '50%' : '0',
+              x: isScrolled ? '-50%' : '0',
+            }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute top-0 flex items-center justify-center h-14 bg-white/10 hover:bg-white/20 backdrop-blur-2xl rounded-full text-slate-800 hover:text-slate-900 cursor-pointer shadow-xl shadow-black/10 border border-white/20 overflow-hidden"
+            style={{
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+            }}
+            aria-label={navigationData.ctaButton.text}
+          >
+            {/* Content */}
+            <div className="flex items-center justify-center px-5">
+              <Mail className="w-5 h-5 flex-shrink-0" />
+              <motion.span
+                animate={{
+                  opacity: isScrolled ? 0 : 1,
+                  width: isScrolled ? 0 : 'auto',
+                  marginLeft: isScrolled ? 0 : 8,
+                }}
+                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                className="font-semibold text-sm whitespace-nowrap overflow-hidden"
+              >
+                {navigationData.ctaButton.text}
+              </motion.span>
+            </div>
+          </motion.a>
+        </motion.div>
       </div>
 
       {/* Mobile Menu */}
@@ -135,7 +169,7 @@ export default function Navigation() {
             }}
           >
             <div className="flex flex-col items-center justify-center space-y-6">
-              {navLinks.map((link, index) => (
+              {navigationData.links.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.href}
