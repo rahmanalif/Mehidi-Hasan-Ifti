@@ -1,8 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
-import timelineData from '@/content/timeline.json';
+import timelineData from '@/content/timelinepro.json';
 
-export default function Timeline() {
+export default function TimelinePro() {
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-[#f5f1ed]">

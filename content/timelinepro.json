@@ -1,0 +1,57 @@
+{
+  "timelineEvents": [
+    {
+      "year": "2012 - 2017",
+      "icon": "🎓",
+      "iconBg": "bg-blue-100",
+      "content": [
+        "Started my professional journey studying Medicine at the University of Cambridge. During this time, I developed innovative study techniques and built a successful side business helping students get into medical school."
+      ]
+    },
+    {
+      "year": "2017 - 2020",
+      "icon": "🏥",
+      "iconBg": "bg-green-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "Working as a junior doctor",
+      "content": [
+        "Worked as a junior doctor at Addenbrooke's Hospital and West Suffolk Hospital, gaining experience in multiple specialties including Cardiology, Psychiatry, and General Surgery.",
+        "Continued growing my YouTube channel while working full-time in medicine, reaching 100,000 subscribers."
+      ]
+    },
+    {
+      "year": "2020 - 2021",
+      "icon": "🚀",
+      "iconBg": "bg-purple-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "Building the business",
+      "content": [
+        "Made the transition from medicine to full-time content creation and entrepreneurship. Grew the YouTube channel to 1 million subscribers.",
+        "Started building a team and establishing business systems to support sustainable growth."
+      ]
+    },
+    {
+      "year": "2022 - 2023",
+      "icon": "📚",
+      "iconBg": "bg-indigo-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "Publishing my first book",
+      "content": [
+        "Published 'Feel-Good Productivity' which became a New York Times and Sunday Times bestseller. The book has been translated into 35+ languages."
+      ],
+      "extraContent": [
+        "Expanded the team and launched multiple educational products including courses and workshops focused on productivity and personal development."
+      ]
+    },
+    {
+      "year": "2024 - Present",
+      "icon": "🌍",
+      "iconBg": "bg-cyan-100",
+      "image": "/api/placeholder/400/250",
+      "imageCaption": "Global expansion",
+      "content": [
+        "Continued to scale the business globally, reaching millions of people worldwide through various platforms and products. Currently based in Hong Kong, working on new projects and initiatives."
+      ]
+    }
+  ]
+}

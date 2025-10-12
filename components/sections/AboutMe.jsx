@@ -6,7 +6,7 @@ import aboutData from '@/content/about.json';
 
 export default function AboutMe() {
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24">
+    <section id="about" className="py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Card Container */}
         <div

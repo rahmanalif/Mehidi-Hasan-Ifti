@@ -3,11 +3,14 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useRouter, usePathname } from 'next/navigation';
 import navigationData from '@/content/navigation.json';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,17 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      // If already on home page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to home page
+      router.push('/');
+    }
+  };
 
   const scrollToSection = (href) => {
     setIsMobileMenuOpen(false);
@@ -47,11 +61,8 @@ export default function Navigation() {
             <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
+              href="/"
+              onClick={handleLogoClick}
               className="text-lg md:text-xl font-bold font-mono cursor-pointer text-slate-800 transition-colors flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

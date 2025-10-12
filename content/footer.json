@@ -1,0 +1,115 @@
+{
+  "brandName": "Mehidi Hasan Ifti",
+  "copyrightText": "Mehidi Hasan Ifti",
+  "socialLinks": [
+    {
+      "name": "YouTube",
+      "icon": "youtube",
+      "href": "https://youtube.com"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "href": "https://instagram.com"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "href": "https://linkedin.com"
+    },
+    {
+      "name": "TikTok",
+      "icon": "tiktok",
+      "href": "https://tiktok.com"
+    },
+    {
+      "name": "X",
+      "icon": "x",
+      "href": "https://x.com"
+    },
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "href": "https://facebook.com"
+    }
+  ],
+  "navigation": {
+    "more": {
+      "title": "More",
+      "links": [
+        {
+          "name": "About",
+          "href": "/About"
+        },
+        {
+          "name": "Jobs",
+          "href": "#jobs"
+        },
+        {
+          "name": "Contact",
+          "href": "#contact"
+        },
+        {
+          "name": "My Account",
+          "href": "#account"
+        }
+      ]
+    },
+    "freeContent": {
+      "title": "Free Content",
+      "links": [
+        {
+          "name": "Newsletter",
+          "href": "#newsletter"
+        },
+        {
+          "name": "Articles & Guides",
+          "href": "#articles"
+        },
+        {
+          "name": "Podcast",
+          "href": "#podcast"
+        },
+        {
+          "name": "Videos",
+          "href": "#videos"
+        },
+        {
+          "name": "Book Notes",
+          "href": "#book-notes"
+        }
+      ]
+    },
+    "products": {
+      "title": "Products",
+      "links": [
+        {
+          "name": "My Book",
+          "href": "#book"
+        },
+        {
+          "name": "YouTuber Academy",
+          "href": "#youtube-academy"
+        },
+        {
+          "name": "LifeOS",
+          "href": "#lifeos"
+        }
+      ]
+    }
+  },
+  "legalLinks": [
+    {
+      "name": "Privacy Policy",
+      "href": "#privacy"
+    },
+    {
+      "name": "Cookie Policy",
+      "href": "#cookies"
+    }
+  ],
+  "bottomButton": {
+    "text": "Made with ❤️ by Alif",
+    "href": "#lifeos"
+  }
+}

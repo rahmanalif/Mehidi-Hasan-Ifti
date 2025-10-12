@@ -47,7 +47,7 @@ const helpItems = [
 
 export default function HowICanHelp() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section id="services" className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
         {/* Cascading Layout */}
         <div className="relative">

@@ -1,13 +1,13 @@
-import AboutMe from '@/components/sections/AboutMe';
-import Timeline from '@/components/sections/Timeline';
+import ProfessionalMe from '@/components/sections/ProfessionalMe';
+import TimelinePro from '@/components/sections/TimelinePro';
 import NewsletterSubscribe from '@/components/sections/NewsletterSubscribe';
 import Footer from '@/components/sections/Footer';
 
-export default function About() {
+export default function Professional() {
     return (
         <div>
-            <AboutMe />
-            <Timeline />
+            <ProfessionalMe />
+            <TimelinePro />
             <NewsletterSubscribe />
             <Footer />
         </div>
